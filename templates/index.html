@@ -25,10 +25,11 @@
             {% for articulo in articulos %}
             <div class="article">
                 <h2>{{ articulo.titulo }}</h2>
-                <p>{{ articulo.autores }}</p>
-                <p>{{ articulo.año }}</p>
-                <p>{{ articulo.palabras_clave }}</p>
-                <p>{{ articulo.ruta_pdf }}</p>
+                <p><strong>Authors:</strong> {{ articulo.autores }}</p>
+                <p><strong>Year:</strong> {{ articulo.año }}</p>
+                <p><strong>Keywords:</strong> {{ articulo.palabras_clave }}</p>
+                <p><strong>PDF Path:</strong> {{ articulo.ruta_pdf }}</p>
+                <p><strong>Date Added:</strong> {{ articulo.fecha_agregado }}</p>
             </div>
             {% endfor %}
         </div>
