@@ -1,7 +1,6 @@
 from app import app, db
 from app.models import Articulo
 from flask import render_template, request, redirect, url_for, flash
-import shutil
 import os
 
 @app.route('/')
@@ -30,3 +29,4 @@ def search_articles():
     busqueda = '%' + request.form['buscar'] + '%'
     articulos = Articulo.query.filter(Articulo.palabras_clave.like(busqueda)).all()
     return render_template('index.html', articulos=articulos)
+
