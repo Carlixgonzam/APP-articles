@@ -5,11 +5,12 @@ body {
     padding: 0;
 }
 .container {
-    width: 50%;
+    width: 70%;
     margin: 20px auto;
     padding: 20px;
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
 }
 h1 {
     text-align: center;
@@ -33,6 +34,10 @@ button {
     border-radius: 4px;
     color: #fff;
     font-size: 16px;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #218838;
 }
 .article {
     margin-bottom: 10px;
@@ -41,3 +46,4 @@ button {
     border-radius: 4px;
     background-color: #fafafa;
 }
+
