@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Article Classifier</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Article Classifier</h1>
+        <form action="{{ url_for('add_article') }}" method="POST">
+            <input type="text" name="titulo" placeholder="Title" required>
+            <input type="text" name="autores" placeholder="Authors" required>
+            <input type="number" name="año" placeholder="Year" required>
+            <input type="text" name="palabras_clave" placeholder="Keywords" required>
+            <input type="text" name="ruta_pdf" placeholder="PDF Path" required>
+            <button type="submit">Add Article</button>
+        </form>
+        <form action="{{ url_for('search_articles') }}" method="POST">
+            <input type="text" name="buscar" placeholder="Search by keywords">
+            <button type="submit">Search</button>
+        </form>
+        <div>
+            {% for articulo in articulos %}
+            <div class="article">
+                <h2>{{ articulo.titulo }}</h2>
+                <p>{{ articulo.autores }}</p>
+                <p>{{ articulo.año }}</p>
+                <p>{{ articulo.palabras_clave }}</p>
+                <p>{{ articulo.ruta_pdf }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
